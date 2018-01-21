@@ -47,9 +47,9 @@ include 'database/koneksi.php';
                     <span class="fa fa-drivers-license-o" aria-hidden="true"></span> Lihat
                 </a>
                 <?php if(isset($_SESSION['username'])) { ?>
-                  <button type="button" class="btn btn-warning"> Edit
+                  <a href="edit_berita.php?id=<?php echo $data->id_berita ?>" class="btn btn-warning"> Edit
                       <span class="fa fa-edit" aria-hidden="true"></span>
-                  </button>
+                  </a>
                   <a href="hapus_berita.php?id=<?php echo $data->id_berita ?>" class="btn btn-danger"> Hapus
                       <span class="fa fa-trash" aria-hidden="true"></span>
                   </a>

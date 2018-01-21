@@ -47,9 +47,9 @@ include 'database/koneksi.php';
         <td>
           <div class="btn-group" role="group" aria-label="Basic example">
               
-              <button type="button" class="btn btn-warning"> Edit
+              <a href="edit_admin.php?id=<?php echo $data->id_admin ?>" class="btn btn-warning"> Edit
                   <span class="fa fa-edit" aria-hidden="true"></span>
-              </button>
+              </a>
               <a href="hapus_admin.php?id=<?php echo $data->id_admin ?>" class="btn btn-danger"> Hapus
                   <span class="fa fa-trash" aria-hidden="true"></span>
               </a>

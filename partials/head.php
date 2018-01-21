@@ -12,10 +12,9 @@
   <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
   <style>
   .jumbotron {
-      background-image: url('assets/img/header.jpg');
+      /* background-image: url('assets/img/header.jpg'); */
       background-size: cover;
       width: 100%;
-      color: white;
     }
     .space {
       margin-top: 20px;

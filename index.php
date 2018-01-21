@@ -8,9 +8,9 @@
       <div class="space">
         <div class="jumbotron">
           <h1 class="display-3">Sistem Informasi Dinas Kesehatan Kota Mataram</h1>
-          <p class="lead">Kami Melayani masyarakat dengan sepenuh hati bla blabla.</p>
+          <p class="lead">Kami Melayani masyarakat dengan sepenuh hati.</p>
           <hr class="my-4">
-          <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+          
           <p class="lead">
             <a class="btn btn-primary btn-lg" href="profil.php" role="button">Tentang Kami</a>
           </p>
