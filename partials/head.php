@@ -35,7 +35,7 @@
           <a class="nav-link" href="profil.php">Profil</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="#">Layanan Publik</a>
+          <a class="nav-link" href="layanan_publik.php">Layanan Publik</a>
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="#">Program</a>
