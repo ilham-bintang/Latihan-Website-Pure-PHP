@@ -1,23 +1,17 @@
+<?php 
+  if(!isset($_SESSION))
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
+
   <title>Sistem Informasi Dinas Kesehatan</title>
+
   <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-  <script type="text/javascript" src="assets/js/jquery.min.js"></script>
-<!--   <script type="text/javascript" src="assets/js/jquery.min.map"></script> -->
-  <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-<!--   <script type="text/javascript" src="assets/js/jQuery-2.2.0.min.js"></script> -->
-  <style type="text/css">
-  .jumbotron {
-    background-image: url('assets/img/header.jpg');
-    background-size: cover;
-    width: 100%;
-    color: white;
-  }
-  .space {
-    margin-top: 20px;
-  }
-</style>
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -38,7 +32,7 @@
           <a class="nav-link" href="layanan_publik.php">Layanan Publik</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="program">Program</a>
+          <a class="nav-link" href="program.php">Program</a>
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="buku_tamu.php">Buku Tamu</a>
@@ -47,30 +41,44 @@
           <a class="nav-link" href="admin.php">Admin</a>
         </li>        
       </ul>
-
-      <button type="button" class="btn btn-secondary my-2 my-sm-0" data-toggle="modal" data-target="#myModal" >Login</button>
-      <!-- <a class="btn btn-secondary my-2 my-sm-0" data-toogle="modal" data-target="#myModal">Login</a> -->
+      <?php if(isset($_SESSION)) { ?>
+        <a class="btn btn-secondary my-2 my-sm-0" href="logout.php" >Logout</a>  
+      <?php } else { ?> 
+        <button type="button" class="btn btn-secondary my-2 my-sm-0" data-toggle="modal" data-target="#myModal" >Login</button>
+      <?php } ?>
     </div>
   </nav>
 
 
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
-        </div>
-        <div class="modal-body">
-          <p>Some text in the modal.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
+  <div class="modal fade" id="myModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Login Admin</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-    
+      <div class="modal-body">
+      <form action="aksi_login.php" method="post">
+        <fieldset>          
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" placeholder="Enter username" name="username">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your username with anyone else.</small>
+          </div>
+        </fieldset>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Login</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+      </form>
     </div>
   </div>
-
+</div>
   
