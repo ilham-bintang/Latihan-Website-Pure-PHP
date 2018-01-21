@@ -38,7 +38,7 @@
           <a class="nav-link" href="layanan_publik.php">Layanan Publik</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="#">Program</a>
+          <a class="nav-link" href="program">Program</a>
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="buku_tamu.php">Buku Tamu</a>
