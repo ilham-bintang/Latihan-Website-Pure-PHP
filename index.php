@@ -37,7 +37,7 @@
             <p class="card-text"><?php echo $data->isi_berita; ?></p>
           </div>
           <div class="card-body">
-            <a href="#" class="card-link">Lihat Selengkapnya</a>
+            <a href="detail_berita.php?id=<?php echo $data->id_berita ?>" class="card-link">Lihat Selengkapnya</a>
           </div>
           <div class="card-footer text-muted">
             <?php echo $data->tanggal_berita; ?>

@@ -62,6 +62,9 @@
       </ul>
 
       <?php if(isset($_SESSION['username'])) { ?>
+        <p class="my-2 my-sm-0 text-white">Selamat datang, <?php echo $_SESSION['username']; ?></p>  
+        <p class="my-2 my-sm-0 text-black"> .....  </p>
+        
         <a class="btn btn-secondary my-2 my-sm-0" href="logout.php" >Logout</a>  
       <?php } else { ?> 
         <button type="button" class="btn btn-secondary my-2 my-sm-0" data-toggle="modal" data-target="#myModal" >Login</button>

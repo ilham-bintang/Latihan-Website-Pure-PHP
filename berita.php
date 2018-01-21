@@ -32,8 +32,7 @@ include 'database/koneksi.php';
         $query = mysqli_query($konek,"SELECT * FROM berita");
         $no =1;
         while($data=mysqli_fetch_object($query)) {
-
-       ?>
+    ?>
     <tr>
         <th scope="row"><?php echo $no; ?></th>
         <td>
@@ -44,9 +43,9 @@ include 'database/koneksi.php';
         <td><?php echo $data->tanggal_berita; ?></td>
         <td>
             <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-success">
+                <a href="detail_berita.php?id=<?php echo $data->id_berita ?>" class="btn btn-success">
                     <span class="fa fa-drivers-license-o" aria-hidden="true"></span> Lihat
-                </button>
+                </a>
                 <?php if(isset($_SESSION['username'])) { ?>
                   <button type="button" class="btn btn-warning"> Edit
                       <span class="fa fa-edit" aria-hidden="true"></span>
@@ -70,8 +69,5 @@ include 'database/koneksi.php';
     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#tambahAdmin">Tambah Berita</button>
   </div>
 <?php }?> 
-
-
-
 
 <?php include 'partials/footer.php'; ?>
