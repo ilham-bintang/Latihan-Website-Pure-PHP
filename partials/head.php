@@ -8,13 +8,29 @@
 <head>
 
   <title>Sistem Informasi Dinas Kesehatan</title>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <style>
+  .jumbotron {
+      background-image: url('assets/img/header.jpg');
+      background-size: cover;
+      width: 100%;
+      color: white;
+    }
+    .space {
+      margin-top: 20px;
+    }
+  </style>
 
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  
+  <?php if(isset($_SESSION['username'])) { ?>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <?php } else { ?> 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <?php } ?>
+
     <a class="navbar-brand" href="index.php">SIKES</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -25,14 +41,19 @@
         <li class="nav-item active">
           <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
         </li>
+        <?php if(isset($_SESSION['username'])) { ?>
+          <li class="nav-item active">
+            <a class="nav-link" href="berita.php">Berita</a>
+          </li>
+        <?php } ?> 
         <li class="nav-item active">
           <a class="nav-link" href="profil.php">Profil</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="layanan_publik.php">Layanan Publik</a>
+          <a class="nav-link" href="#">Layanan Publik</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="program.php">Program</a>
+          <a class="nav-link" href="#">Program</a>
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="buku_tamu.php">Buku Tamu</a>
@@ -41,16 +62,18 @@
           <a class="nav-link" href="admin.php">Admin</a>
         </li>        
       </ul>
-      <?php if(isset($_SESSION)) { ?>
+
+      <?php if(isset($_SESSION['username'])) { ?>
         <a class="btn btn-secondary my-2 my-sm-0" href="logout.php" >Logout</a>  
       <?php } else { ?> 
         <button type="button" class="btn btn-secondary my-2 my-sm-0" data-toggle="modal" data-target="#myModal" >Login</button>
       <?php } ?>
+
     </div>
   </nav>
 
 
-  <div class="modal fade" id="myModal">
+<div class="modal fade" id="myModal">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
