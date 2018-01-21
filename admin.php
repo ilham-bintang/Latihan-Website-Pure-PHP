@@ -50,9 +50,9 @@ include 'database/koneksi.php';
               <button type="button" class="btn btn-warning"> Edit
                   <span class="fa fa-edit" aria-hidden="true"></span>
               </button>
-              <button type="button" class="btn btn-danger"> Hapus
+              <a href="hapus_admin.php?id=<?php echo $data->id_admin ?>" class="btn btn-danger"> Hapus
                   <span class="fa fa-trash" aria-hidden="true"></span>
-              </button>
+              </a>
           </div>  
         </td>
       <?php }?> 

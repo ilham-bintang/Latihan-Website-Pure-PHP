@@ -50,9 +50,9 @@ include 'database/koneksi.php';
                   <button type="button" class="btn btn-warning"> Edit
                       <span class="fa fa-edit" aria-hidden="true"></span>
                   </button>
-                  <button type="button" class="btn btn-danger"> Hapus
+                  <a href="hapus_berita.php?id=<?php echo $data->id_berita ?>" class="btn btn-danger"> Hapus
                       <span class="fa fa-trash" aria-hidden="true"></span>
-                  </button>
+                  </a>
                 <?php }?> 
             </div>  
         </td>
@@ -66,8 +66,43 @@ include 'database/koneksi.php';
 
 <?php if(isset($_SESSION['username'])) { ?>
   <div class="container">
-    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#tambahAdmin">Tambah Berita</button>
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#tambahBerita">Tambah Berita</button>
   </div>
 <?php }?> 
+
+<div class="modal fade" id="tambahBerita">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Tambah Berita</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <form action="aksi_tambah_berita.php" method="post" enctype="multipart/form-data">
+        <fieldset>          
+          <div class="form-group">
+            <label for="username">Judul Berita</label>
+            <input type="text" class="form-control" id="username" placeholder="judul berita" name="judul">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Isi Berita</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Isi berita" name="isi">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Foto Berita</label>
+            <input type="file" class="form-control" id="exampleInputPassword1" placeholder="Foto" name="foto">
+          </div>                    
+        </fieldset>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Tambah</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
 
 <?php include 'partials/footer.php'; ?>
