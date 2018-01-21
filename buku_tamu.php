@@ -67,6 +67,8 @@ include 'database/koneksi.php';
   <button type="button" class="btn btn-success" data-toggle="modal" data-target="#tambahPengunjung">Tambah Pengunjung</button>
 </div>
 <?php }?> 
+
+
 <div class="modal fade" id="tambahPengunjung">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

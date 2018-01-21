@@ -41,11 +41,9 @@
         <li class="nav-item active">
           <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
         </li>
-        <?php if(isset($_SESSION['username'])) { ?>
           <li class="nav-item active">
             <a class="nav-link" href="berita.php">Berita</a>
           </li>
-        <?php } ?> 
         <li class="nav-item active">
           <a class="nav-link" href="profil.php">Profil</a>
         </li>

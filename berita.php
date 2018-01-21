@@ -7,7 +7,7 @@ include 'database/koneksi.php';
   <div class="row">
     <div class="container">
       <h1>
-        Data Admin
+        Data Berita
       </h1>
 
     </div>
@@ -47,12 +47,14 @@ include 'database/koneksi.php';
                 <button type="button" class="btn btn-success">
                     <span class="fa fa-drivers-license-o" aria-hidden="true"></span> Lihat
                 </button>
-                <button type="button" class="btn btn-warning"> Edit
-                    <span class="fa fa-edit" aria-hidden="true"></span>
-                </button>
-                <button type="button" class="btn btn-danger"> Hapus
-                    <span class="fa fa-trash" aria-hidden="true"></span>
-                </button>
+                <?php if(isset($_SESSION['username'])) { ?>
+                  <button type="button" class="btn btn-warning"> Edit
+                      <span class="fa fa-edit" aria-hidden="true"></span>
+                  </button>
+                  <button type="button" class="btn btn-danger"> Hapus
+                      <span class="fa fa-trash" aria-hidden="true"></span>
+                  </button>
+                <?php }?> 
             </div>  
         </td>
     </tr>
@@ -63,9 +65,11 @@ include 'database/koneksi.php';
 
 </div>
 
-<div class="container">
-  <button type="button" class="btn btn-success">Tambah Pengunjung</button>
-</div>
+<?php if(isset($_SESSION['username'])) { ?>
+  <div class="container">
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#tambahAdmin">Tambah Berita</button>
+  </div>
+<?php }?> 
 
 
 
